@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <meta name="theme-color" content="#9c8dba"/>
+  <title>Agenda – Registro</title>
+  <link rel="manifest" href="manifest.json"/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <header class="header">
+    <h1>🗒️ Datos de Registro</h1>
+  </header>
+  <nav>
+    <a href="index.html">🏠 Inicio</a>
+    <a href="notas.html">📝 Notas</a>
+    <a href="registro.html">🗒️ Registro</a>
+    <a href="mes.html">📅 Mes</a>
+  </nav>
+  <main class="container">
+    <section class="section-card table-responsive">
+      <table>
+        <thead>
+          <tr>
+            <th>Nombre de Página</th>
+            <th>Correo de Usuario</th>
+            <th>Contraseña</th>
+          </tr>
+        </thead>
+        <tbody id="registro-body"></tbody>
+      </table>
+      <button id="add-row" class="btn">+ Agregar Registro</button>
+    </section>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,117 @@
+:root {
+  --primary: #9c8dba;
+  --light:   #fff0ff;
+  --accent:  #cebfdd;
+  --text:    #333;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: var(--light);
+  color: var(--text);
+}
+.header {
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  color: white;
+  padding: 2rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.header::before {
+  content: '';
+  position: absolute;
+  width: 200px; height: 200px;
+  background: rgba(255,255,255,0.2);
+  border-radius: 50%;
+  top: -50px; right: -50px;
+}
+nav {
+  background: var(--accent);
+  padding: 0.75rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+nav a {
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 600;
+}
+.container {
+  padding: 2rem;
+  max-width: 960px;
+  margin: auto;
+}
+/* Botones generales */
+.btn {
+  background: var(--primary);
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+  padding: 0.75rem 1rem;
+  text-align: center;
+  border: none;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  cursor: pointer;
+  transition: transform 0.2s, background 0.2s;
+  margin-top: 1rem;
+}
+.btn:hover { transform: scale(1.05); background: var(--accent); }
+
+/* Centralizar botones en móvil */
+.btn-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 1rem; }
+@media (max-width: 600px) {
+  .btn-grid { justify-items: center; }
+}
+
+/* Sección de notas */
+.section-card {
+  background: white;
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+  padding: 2rem;
+  margin-bottom: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+.section-card::before {
+  content: '';
+  position: absolute;
+  width: 120px; height: 120px;
+  background: var(--accent);
+  border-radius: 50%;
+  bottom: -40px; left: -40px;
+}
+.nota-card {
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+.nota-card textarea {
+  width: 100%;
+  min-height: 150px;
+  padding: 1rem;
+  border: 1px solid var(--accent);
+  border-radius: 0.5rem;
+  resize: vertical;
+}
+
+/* Tablas responsive y ajuste de columna meses en móvil */
+.table-responsive { overflow-x: auto; }
+.table-responsive table { width: 100%; min-width: 300px; border-collapse: collapse; margin-top: 1rem; }
+th, td { border: 1px solid var(--accent); padding: 0.75rem; text-align: left; }
+th { background: var(--primary); color: white; }
+tr:nth-child(even) { background: var(--light); }
+
+/* Reducir ancho columna Mes en móvil */
+@media (max-width: 600px) {
+  .table-responsive table th:first-child,
+  .table-responsive table td:first-child { width: 30%; white-space: nowrap; }
+}
+
+/* Media queries generales */
+@media (max-width: 600px) {
+  nav { flex-direction: column; }
+}

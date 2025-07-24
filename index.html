@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <meta name="theme-color" content="#9c8dba"/>
+  <title>Agenda – Inicio</title>
+  <link rel="manifest" href="manifest.json"/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <header class="header">
+    <h1>📖 Agenda Personal</h1>
+  </header>
+  <main class="container">
+    <h2>Bienvenido</h2>
+    <p>Selecciona una sección:</p>
+    <div class="btn-grid">
+      <a class="btn" href="notas.html">📝 Notas</a>
+      <a class="btn" href="registro.html">🗒️ Registro</a>
+      <a class="btn" href="mes.html">📅 Datos del Mes</a>
+    </div>
+  </main>
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/service-worker.js');
+      });
+    }
+  </script>
+</body>
+</html>
